@@ -15,3 +15,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* hide class, content which we do not want displayed
+initially on the webpage, until the user clicks the Start Quiz
+or High Scores button */
+.hide {
+  display: none;
+}
