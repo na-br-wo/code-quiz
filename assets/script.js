@@ -55,6 +55,13 @@ function nextQuestion() {
 function showQuestions(e) {
   // sets question string in the array to the HTML page
   questionTextEl.innerText = e.question
+
+  // generating new buttons based on answers object
+  // iterating through answers object with for...in loop
+  for (const answer in e.answers) {
+    console.log(`${answer}: ${e.answers[answer]}`);
+  }
+  
 }
 
 // function that controls what happens when user selects an aswer
