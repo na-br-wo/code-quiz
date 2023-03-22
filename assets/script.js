@@ -16,7 +16,13 @@ scoreBtn.addEventListener('click', showHighScores)
 // when user clicks on "Start Quiz!" button, call the startQuiz function
 startBtn.addEventListener('click', startQuiz)
 
-
+// when user clicks on "Next", calls nextQuestion function
+nextBtn.addEventListener('click', () => {
+  // when next button is clicked, increment currentQuestionIndex
+  // this will advance through the array to the next question
+  currentQuestionIndex++
+  nextQuestion()
+})
 
 
 // function that displays the high scores
@@ -29,6 +35,7 @@ function showHighScores() {
 function startQuiz() {
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
+  scoreBtn.classList.add('hide')
 
   // removing .hide class, so when startQuiz is clicked the 
   // question-container is displayed
@@ -88,6 +95,9 @@ function showQuestions(e) {
     } else {
       console.log("Incorrect!")
     }
+    
+    // after answer is selected, the nextBtn appears
+    nextBtn.classList.remove('hide')
   }
 }
 
@@ -187,11 +197,11 @@ const questions = [
     question: 'How do you start a WHILE loop in Javascript?',
     answers: [
       'a: while {i}',
-      'b: while (i <=10)',
+      'b: while (i <= 10)',
       'c: while (i <=10; i++)',
       'd: while [i = 1, i = 10]'
     ],
-    correctAnswer: 'b: while(i <= 10) ',
+    correctAnswer: 'b: while (i <= 10)',
   },
   {
     question: 'How do you initialize a Javascript array?',
