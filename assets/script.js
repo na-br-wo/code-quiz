@@ -1,7 +1,7 @@
 // Set of quiz questions
 const questions = [
   {
-    question: 'Which HTML element is used to embed javascript?',
+    question: 'Which HTML element is used to insert javascript?',
     answers: {
       a: '<js>',
       b: '<javascript>',
