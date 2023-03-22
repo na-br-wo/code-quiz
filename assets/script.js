@@ -2,6 +2,8 @@
 const scoreBtn = document.getElementById('score-btn')
 const startBtn = document.getElementById('start-btn')
 const questionContainerEl = document.getElementById('question-container')
+const questionTextEl = document.getElementById('question-text')
+const answerBtnsEl = document.getElementById('answer-btns')
 
 // variables that handle randomizing question order
 // assiging them with let and no initialization, which makes them undefined
@@ -33,7 +35,7 @@ function startQuiz() {
 
   // randomizing the order of the questions array
   // gets a random number that is either positive or negative
-  // + or - will determine order of array
+  // + or - will determine order of array with .sort()
   randomQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
   
@@ -44,7 +46,15 @@ function startQuiz() {
 // function that advances to the next question
 // shuffles through questions array at random
 function nextQuestion() {
+  showQuestions(randomQuestions[currentQuestionIndex])
+}
 
+// function showQuestion will display the index in the array based on
+// randomized order from randomQuestions and currentQuestionIndex
+// parameter 'e' is the element we are entering from 'questions' array
+function showQuestions(e) {
+  // sets question string in the array to the HTML page
+  questionTextEl.innerText = e.question
 }
 
 // function that controls what happens when user selects an aswer
