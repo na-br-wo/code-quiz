@@ -1,0 +1,17 @@
+/* setting basic CSS styling that will apply
+to all elements on the page box-sizing: border-box 
+will include border/padding in width
+so we do not have to remember it ourselves when styling */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* setting up the body so webpage content is centered */
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
