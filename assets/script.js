@@ -46,9 +46,10 @@ function startQuiz() {
   // + or - will determine order of array with .sort()
   randomQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
-  
   // calling nextQuestion function so questions actually display
   nextQuestion()
+  
+  
 }
 
 // function that advances to the next question
@@ -95,9 +96,16 @@ function showQuestions(e) {
     } else {
       console.log("Incorrect!")
     }
+
+    if (randomQuestions.length > currentQuestionIndex + 1) {
+      // after answer is selected, the nextBtn appears
+      nextBtn.classList.remove('hide')
+      
+    } else {
+      console.log('result screen')
+      resultScreen()
+    }
     
-    // after answer is selected, the nextBtn appears
-    nextBtn.classList.remove('hide')
   }
 }
 
