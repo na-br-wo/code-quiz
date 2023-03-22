@@ -59,7 +59,6 @@ function showQuestions(e) {
   // generating new buttons based on answers object
   // iterating through answers object with for...in loop
   for (const answer in e.answers) {
-    console.log(`${answer}: ${e.answers[answer]}`);
   }
   
 }
@@ -73,102 +72,103 @@ function selectAnswer() {
 const questions = [
   {
     question: 'Which HTML element is used to insert javascript?',
-    answers: {
-      a: '<js>',
-      b: '<javascript>',
-      c: '<jscode>',
-      d: '<script>'
-    },
-    correctAnswer: 'd'
+    answers: [
+      'a: <js>',
+      'b: <javascript>',
+      'c: <jscode>',
+      'd: <script>'
+  ],
+    correctAnswer: 'd: <script>'
   },
   {
     question: 'Where can Javascript be inserted in an HTML file?',
-    answers: {
-      a: 'Both the <head> and <body> sections',
-      b: 'Only the <head> section',
-      c: 'Only the <body> section',
-      d: 'Only in an external file'
-    },
-    correctAnswer: 'a'
+    answers: [
+      'a: Both the <head> and <body> sections',
+      'b: Only the <head> section',
+      'c: Only the <body> section',
+      'd: Only in an external file'
+    ],
+    correctAnswer: 'a: Both the <head> and <body> sections'
   },
   {
     question: 'What is the correct syntax when using an external script named "script.js"?',
-    answers: {
-      a: '<script href="script.js">',
-      b: '<script>script.js</script>',
-      c: '<script src="script.js">',
-      d: 'script == script.js'
-    },
-    correctAnswer: 'c'
+    answers: [
+      'a: <script href="script.js">',
+      'b: <script>script.js</script>',
+      'c: <script src="script.js">',
+      'd: script == script.js'
+    ],
+    correctAnswer: 'c: <script src="script.js">'
   },
   {
     question: 'Which of the following lines of code will successfully create a function in Javascript?',
-    answers: {
-      a: 'function = myFunction()',
-      b: 'myFunction = function',
-      c: 'function myFunction()',
-      d: 'function:myFunction()'
-    },
-    correctAnswer: 'c'
+    answers: [
+      'a: function = myFunction()',
+      'b: myFunction = function',
+      'c: function myFunction()',
+      'd: function:myFunction()'
+    ],
+    correctAnswer: 'c: function myFunction()'
   },
   {
     question: 'In Javascript syntax, how do you call a function named "funcA"?',
-    answers: {
-      a: 'funcA();',
-      b: 'call funcA();',
-      c: 'funcA(call);',
-      d: 'functionCall funcA();'
-    },
-    correctAnswer: 'a'
+    answers: [
+      'a: funcA();',
+      'b: call funcA();',
+      'c: funcA(call);',
+      'd: functionCall funcA();'
+    ],
+    correctAnswer: 'a: funcA();'
   },
   {
     question: 'Which of the following is the correct syntax for writing an IF statement in Javascript?',
-    answers: {
-      a: 'if i = 10',
-      b: 'if (i == 10)',
-      c: 'if (i == 10), then',
-      d: 'if i = 10, then'
-    },
-    correctAnswer: 'b'
+    answers: [
+      'a: if i = 10',
+      'b: if (i == 10)',
+      'c: if (i == 10), then',
+      'd: if i = 10, then'
+    ]
+    ,
+    correctAnswer: 'b: if (i == 10)'
   },
   {
     question: 'How would you write an IF statement that will execute if "i" is NOT equal to 10?',
-    answers: {
-      a: 'if i =! 5 then',
-      b: 'if i <> 5',
-      c: 'if (i <> 5)',
-      d: 'if (i != 5)'
-    },
-    correctAnswer: 'd'
+    answers: [
+      'a: if i =! 5 then',
+      'b: if i <> 5',
+      'c: if (i <> 5)',
+      'd: if (i != 5)'
+    ],
+    correctAnswer: 'd: if (i != 5)'
   },
   {
     question: 'How do you start a WHILE loop in Javascript?',
-    answers: {
-      a: 'while {i}',
-      b: 'while (i <=10)',
-      c: 'while (i <=10; i++)',
-      d: 'while [i = 1, i = 10]'
-    },
-    correctAnswer: 'b'
+    answers: [
+      'a: while {i}',
+      'b: while (i <=10)',
+      'c: while (i <=10; i++)',
+      'd: while [i = 1, i = 10]'
+    ],
+    correctAnswer: 'b: while(i <= 10) ',
   },
   {
     question: 'How do you initialize a Javascript array?',
-    answers: {
-      a: 'const array = ["one", "two", "three"]',
-      b: 'const array = []("one", "two", "three")',
-      c: 'const array = "one", "two", "three"',
-      d: 'array(["one", "two", "three"])'
-    },
-    correctAnswer: 'a'
+    answers: [
+      'a: const array = ["one", "two", "three"]',
+      'b: const array = []("one", "two", "three")',
+      'c: const array = "one", "two", "three"',
+      'd: array(["one", "two", "three"])'
+    ],
+    correctAnswer: 'a: const array = ["one", "two", "three"]'
   },
   {
     question: 'What event occurs when the user clicks on an HTML element?',
-    answers: {
-      a: 'onMouseClick',
-      b: 'onMouseButton',
-      c: 'onclick',
-      d: 'buttonClick'
-    },
-    correctAnswer: 'c'
+    answers: [
+      'a: onMouseClick',
+      'b: onMouseButton',
+      'c: onclick',
+      'd: buttonClick'
+    ],
+    correctAnswer: 'c: onclick'
   }
 ]
