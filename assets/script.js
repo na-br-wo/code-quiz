@@ -1,6 +1,7 @@
 // variables
 const scoreBtn = document.getElementById('score-btn')
 const startBtn = document.getElementById('start-btn')
+const nextBtn = document.getElementById('next-btn')
 const questionContainerEl = document.getElementById('question-container')
 const questionTextEl = document.getElementById('question-text')
 const answerBtnsEl = document.getElementById('answer-btns')
@@ -46,6 +47,9 @@ function startQuiz() {
 // function that advances to the next question
 // shuffles through questions array at random
 function nextQuestion() {
+  // reset the page when next question is clicked
+  resetDisplay()
+
   showQuestions(randomQuestions[currentQuestionIndex])
 }
 
@@ -72,9 +76,25 @@ function showQuestions(e) {
   })
 }
 
+// a function that resets the question text, buttons, etc to default
+// also removes placeholder HTML elements so only the dynamically
+// generated elements display on the website
+function resetDisplay() {
+  // hiding the "next" button until answer is selected
+  nextBtn.classList.add('hide')
+
+  // while loop that removes any child within the answerBtnEl
+  // since this function is called before new questions are
+  // displayed and generated, it clears the old exisitng answers
+  // but the new ones are displayed afterwards
+  while (answerBtnsEl.firstChild) {
+    // removes all answerBtnsEl children
+    answerBtnsEl.removeChild(answerBtnsEl.firstChild)
+  }
+}
+
 // function that controls what happens when user selects an aswer
 function selectAnswer() {
-
 }
 
 // Set of quiz questions
