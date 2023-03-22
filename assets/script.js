@@ -1,9 +1,24 @@
+// variables
+const scoreBtn = document.getElementById('score-btn')
+const startBtn = document.getElementById('start-btn')
+
+// when user clicks on "High Scores" button, call the showHighScores function
+scoreBtn.addEventListener('click', showHighScores)
+
+// when user clicks on "Start Quiz!" button, call the startQuiz function
+startBtn.addEventListener('click', startQuiz)
+
+
+
+
 // function that displays the high scores
 function showHighScores() {
+  console.log("High Scores!")
+}
 
-}// function to start the quiz
+// function to start the quiz
 function startQuiz() {
-
+  console.log("Quiz started!")
 }
 
 // function that advances to the next question
@@ -13,7 +28,7 @@ function nextQuestion() {
 
 // function that controls what happens when user selects an aswer
 function selectAnswer() {
-  
+
 }
 
 // Set of quiz questions
