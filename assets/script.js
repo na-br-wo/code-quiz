@@ -94,7 +94,11 @@ function resetDisplay() {
 }
 
 // function that controls what happens when user selects an aswer
-function selectAnswer() {
+function selectAnswer(e) {
+  // creating new variable with .target method
+  // refers to whatever button the user clicked on
+  chosenBtn = e.target
+  console.log(chosenBtn)
 }
 
 // Set of quiz questions
