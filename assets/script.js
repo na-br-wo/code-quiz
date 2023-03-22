@@ -2,9 +2,13 @@
 const scoreBtn = document.getElementById('score-btn')
 const startBtn = document.getElementById('start-btn')
 const nextBtn = document.getElementById('next-btn')
+const restartBtn = document.getElementById('restart-btn')
 const questionContainerEl = document.getElementById('question-container')
 const questionTextEl = document.getElementById('question-text')
 const answerBtnsEl = document.getElementById('answer-btns')
+
+// results element
+const resultsContainerEl = document.getElementById('result-screen')
 
 // variables that handle randomizing question order
 // assiging them with let and no initialization, which makes them undefined
@@ -15,6 +19,9 @@ scoreBtn.addEventListener('click', showHighScores)
 
 // when user clicks on "Start Quiz!" button, call the startQuiz function
 startBtn.addEventListener('click', startQuiz)
+
+// when user clicks restart button it will restart the quiz
+restartBtn.addEventListener('click', startQuiz)
 
 // when user clicks on "Next", calls nextQuestion function
 nextBtn.addEventListener('click', () => {
@@ -36,10 +43,14 @@ function startQuiz() {
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
   scoreBtn.classList.add('hide')
+  // restartBtn.classList.add('hide')
 
   // removing .hide class, so when startQuiz is clicked the 
   // question-container is displayed
   questionContainerEl.classList.remove('hide')
+
+  resultsContainerEl.classList.add('hide')
+
 
   // randomizing the order of the questions array
   // gets a random number that is either positive or negative
@@ -102,7 +113,6 @@ function showQuestions(e) {
       nextBtn.classList.remove('hide')
       
     } else {
-      console.log('result screen')
       resultScreen()
     }
     
@@ -124,6 +134,14 @@ function resetDisplay() {
     // removes all answerBtnsEl children
     answerBtnsEl.removeChild(answerBtnsEl.firstChild)
   }
+}
+
+// function to display the results screen
+// gets called if timer runs out or user answers all the questions
+function resultScreen() {
+  restartBtn.classList.remove('hide')
+  resultsContainerEl.classList.remove('hide')
+  questionContainerEl.classList.add('hide')
 }
 
 
