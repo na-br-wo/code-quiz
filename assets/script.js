@@ -7,6 +7,11 @@ const questionContainerEl = document.getElementById('question-container')
 const questionTextEl = document.getElementById('question-text')
 const answerBtnsEl = document.getElementById('answer-btns')
 
+
+// timer variables
+const timeValue = document.getElementById('time-value')
+
+
 // results element
 const resultsContainerEl = document.getElementById('result-screen')
 
@@ -57,8 +62,8 @@ function startQuiz() {
   randomQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
   // calling nextQuestion function so questions actually display
+  timerDisplay()
   nextQuestion()
-  
   
 }
 
@@ -94,6 +99,8 @@ function showQuestions(e) {
     // adding to the HTML element that containts the buttons
     answerBtnsEl.appendChild(answerBtn)
   })
+
+
 
   // function that controls what happens when user selects an aswer
   function selectAnswer(choice) {
@@ -143,7 +150,18 @@ function resultScreen() {
   questionContainerEl.classList.add('hide')
 }
 
-
+// timer display
+function timerDisplay() {
+  let count = 60
+  countdown = setInterval(() => {
+    timeValue.innerHTML = `${count}s`
+    count--
+    if (count == 0) {
+      clearInterval(countdown)
+      resultScreen()
+    }
+  }, 1000)
+}
 
 // Set of quiz questions
 const questions = [
