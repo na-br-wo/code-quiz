@@ -43,7 +43,6 @@ function startQuiz() {
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
   scoreBtn.classList.add('hide')
-  // restartBtn.classList.add('hide')
 
   // removing .hide class, so when startQuiz is clicked the 
   // question-container is displayed
