@@ -10,6 +10,9 @@ const answerBtnsEl = document.getElementById('answer-btns')
 
 // timer variables
 const timeValue = document.getElementById('time-value')
+let countdown
+let count = 60
+
 
 
 // results element
@@ -100,8 +103,6 @@ function showQuestions(e) {
     answerBtnsEl.appendChild(answerBtn)
   })
 
-
-
   // function that controls what happens when user selects an aswer
   function selectAnswer(choice) {
     // creating new variable with .target method
@@ -112,6 +113,7 @@ function showQuestions(e) {
       console.log("Correct!")
     } else {
       console.log("Incorrect!")
+      count -= 10
     }
 
     if (randomQuestions.length > currentQuestionIndex + 1) {
@@ -121,6 +123,8 @@ function showQuestions(e) {
     } else {
       resultScreen()
     }
+
+  
     
   }
 }
@@ -148,16 +152,17 @@ function resultScreen() {
   restartBtn.classList.remove('hide')
   resultsContainerEl.classList.remove('hide')
   questionContainerEl.classList.add('hide')
+  nextBtn.classList.add('hide')
 }
 
 // timer display
 function timerDisplay() {
-  let count = 60
   countdown = setInterval(() => {
     timeValue.innerHTML = `${count}s`
     count--
-    if (count == 0) {
+    if (count <= 0) {
       clearInterval(countdown)
+      count = 60
       resultScreen()
     }
   }, 1000)
