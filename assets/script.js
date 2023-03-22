@@ -59,7 +59,16 @@ function showQuestions(e) {
   // generating new buttons based on answers object
   // iterating through answers array with foreach
   e.answers.forEach(answer => {
-    console.log(answer)
+    // dynamically creating buttons based on e.answers array
+    const answerBtn = document.createElement('button')
+    answerBtn.innerText = answer
+    // adding .btn class so each generated button gets HTML styling
+    answerBtn.classList.add('btn')
+
+    // event listener calling the selectAnswer function
+    answerBtn.addEventListener('click', selectAnswer)
+    // adding to the HTML element that containts the buttons
+    answerBtnsEl.appendChild(answerBtn)
   })
 }
 
