@@ -57,10 +57,10 @@ function showQuestions(e) {
   questionTextEl.innerText = e.question
 
   // generating new buttons based on answers object
-  // iterating through answers object with for...in loop
-  for (const answer in e.answers) {
-  }
-  
+  // iterating through answers array with foreach
+  e.answers.forEach(answer => {
+    console.log(answer)
+  })
 }
 
 // function that controls what happens when user selects an aswer
