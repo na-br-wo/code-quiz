@@ -11,7 +11,12 @@ const answerBtnsEl = document.getElementById('answer-btns')
 // timer variables
 const timeValue = document.getElementById('time-value')
 let countdown
-let count = 60
+let count = 20
+
+// score display variables
+const scoreValue = document.getElementById('score-value')
+let score = 0
+const finalScoreValue = document.getElementById('final-score')
 
 
 
@@ -83,6 +88,7 @@ function nextQuestion() {
 // randomized order from randomQuestions and currentQuestionIndex
 // parameter 'e' is the inex we are entering from 'questions' array
 function showQuestions(e) {
+  scoreDisplay()
   // initializing the variable for the correct answer
   correctAnswer = e.correctAnswer
   // sets question string in the array to the HTML page
@@ -111,17 +117,18 @@ function showQuestions(e) {
 
     if (chosenBtn.innerText === correctAnswer) {
       console.log("Correct!")
+      score += 10
     } else {
       console.log("Incorrect!")
       count -= 10
     }
-
+    
     if (randomQuestions.length > currentQuestionIndex + 1) {
       // after answer is selected, the nextBtn appears
       nextBtn.classList.remove('hide')
       
     } else {
-      resultScreen()
+      resultScreen(score)
     }
 
   
@@ -148,7 +155,9 @@ function resetDisplay() {
 
 // function to display the results screen
 // gets called if timer runs out or user answers all the questions
-function resultScreen() {
+function resultScreen(score) {
+  finalScoreValue.innerHTML = score
+
   restartBtn.classList.remove('hide')
   resultsContainerEl.classList.remove('hide')
   questionContainerEl.classList.add('hide')
@@ -166,6 +175,10 @@ function timerDisplay() {
       resultScreen()
     }
   }, 1000)
+}
+
+function scoreDisplay() {
+  scoreValue.innerHTML = `${score}`
 }
 
 // Set of quiz questions
