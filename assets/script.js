@@ -3,6 +3,10 @@ const scoreBtn = document.getElementById('score-btn')
 const startBtn = document.getElementById('start-btn')
 const questionContainerEl = document.getElementById('question-container')
 
+// variables that handle randomizing question order
+// assiging them with let and no initialization, which makes them undefined
+let randomQuestions, currentQuestionIndex
+
 // when user clicks on "High Scores" button, call the showHighScores function
 scoreBtn.addEventListener('click', showHighScores)
 
@@ -22,12 +26,23 @@ function showHighScores() {
 function startQuiz() {
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
+
   // removing .hide class, so when startQuiz is clicked the 
   // question-container is displayed
   questionContainerEl.classList.remove('hide')
+
+  // randomizing the order of the questions array
+  // gets a random number that is either positive or negative
+  // + or - will determine order of array
+  randomQuestions = questions.sort(() => Math.random() - .5)
+  currentQuestionIndex = 0
+  
+  // calling nextQuestion function so questions actually display
+  nextQuestion()
 }
 
 // function that advances to the next question
+// shuffles through questions array at random
 function nextQuestion() {
 
 }
