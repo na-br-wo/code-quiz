@@ -1,3 +1,21 @@
+// function that displays the high scores
+function showHighScores() {
+
+}// function to start the quiz
+function startQuiz() {
+
+}
+
+// function that advances to the next question
+function nextQuestion() {
+
+}
+
+// function that controls what happens when user selects an aswer
+function selectAnswer() {
+  
+}
+
 // Set of quiz questions
 const questions = [
   {
