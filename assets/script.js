@@ -55,8 +55,10 @@ function nextQuestion() {
 
 // function showQuestion will display the index in the array based on
 // randomized order from randomQuestions and currentQuestionIndex
-// parameter 'e' is the element we are entering from 'questions' array
+// parameter 'e' is the inex we are entering from 'questions' array
 function showQuestions(e) {
+  // initializing the variable for the correct answer
+  correctAnswer = e.correctAnswer
   // sets question string in the array to the HTML page
   questionTextEl.innerText = e.question
 
@@ -74,6 +76,19 @@ function showQuestions(e) {
     // adding to the HTML element that containts the buttons
     answerBtnsEl.appendChild(answerBtn)
   })
+
+  // function that controls what happens when user selects an aswer
+  function selectAnswer(choice) {
+    // creating new variable with .target method
+    // refers to whatever button the user clicked on
+    chosenBtn = choice.target
+
+    if (chosenBtn.innerText === correctAnswer) {
+      console.log("Correct!")
+    } else {
+      console.log("Incorrect!")
+    }
+  }
 }
 
 // a function that resets the question text, buttons, etc to default
@@ -93,13 +108,7 @@ function resetDisplay() {
   }
 }
 
-// function that controls what happens when user selects an aswer
-function selectAnswer(e) {
-  // creating new variable with .target method
-  // refers to whatever button the user clicked on
-  chosenBtn = e.target
-  console.log(chosenBtn)
-}
+
 
 // Set of quiz questions
 const questions = [
