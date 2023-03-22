@@ -1,6 +1,7 @@
 // variables
 const scoreBtn = document.getElementById('score-btn')
 const startBtn = document.getElementById('start-btn')
+const questionContainerEl = document.getElementById('question-container')
 
 // when user clicks on "High Scores" button, call the showHighScores function
 scoreBtn.addEventListener('click', showHighScores)
@@ -13,16 +14,17 @@ startBtn.addEventListener('click', startQuiz)
 
 // function that displays the high scores
 function showHighScores() {
-  console.log("High Scores!")
   // adding .hide class, so when this is clicked it gets hidden
   scoreBtn.classList.add('hide')
 }
 
 // function to start the quiz
 function startQuiz() {
-  console.log("Quiz started!")
-  // adding .hide class, so when this is clicked it gets hidden
+  // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
+  // removing .hide class, so when startQuiz is clicked the 
+  // question-container is displayed
+  questionContainerEl.classList.remove('hide')
 }
 
 // function that advances to the next question
