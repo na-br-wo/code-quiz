@@ -14,11 +14,15 @@ startBtn.addEventListener('click', startQuiz)
 // function that displays the high scores
 function showHighScores() {
   console.log("High Scores!")
+  // adding .hide class, so when this is clicked it gets hidden
+  scoreBtn.classList.add('hide')
 }
 
 // function to start the quiz
 function startQuiz() {
   console.log("Quiz started!")
+  // adding .hide class, so when this is clicked it gets hidden
+  startBtn.classList.add('hide')
 }
 
 // function that advances to the next question
