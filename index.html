@@ -4,11 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Quiz!</title>
+  <title>Javascript Quiz!</title>
   <script src="./assets/script.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
-  
+  <!-- add a timer that will count down, -10s on a wrong answer -->
+  <!-- container class will be a "card" that will include questions,
+  and answers-->
+  <div class="container">
+    <!-- container for quiz questions, hidden by default -->
+    <div id="question-container" class="hide">
+      <!-- the actual question text, with "Question" as default value -->
+      <div id="question">Question</div>
+      <!-- answer buttons -->
+      <div id="answer-btns" class="btn-list">
+        <!-- button elements with default text for testing -->
+        <button class="btn">A</button>
+        <button class="btn">B</button>
+        <button class="btn">C</button>
+        <button class="btn">D</button>
+      </div>
+    </div>
+    <!-- the initial buttons user will be presented with -->
+    <div class="control-btns">
+      <button id="start-btn" class="start-btn btn">Start Quiz!</button>
+      <button id="score-btn" class="score-btn btn">High Scores</button>
+    </div>
+  </div>
 </body>
 </html>
