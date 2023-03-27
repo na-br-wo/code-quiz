@@ -11,7 +11,7 @@ const answerBtnsEl = document.getElementById('answer-btns')
 // timer variables
 const timeValue = document.getElementById('time-value')
 let countdown
-let count = 20
+let count = 60
 
 // score display variables
 const scoreValue = document.getElementById('score-value')
@@ -57,11 +57,13 @@ function startQuiz() {
   startBtn.classList.add('hide')
   scoreBtn.classList.add('hide')
 
+
   // removing .hide class, so when startQuiz is clicked the 
   // question-container is displayed
   questionContainerEl.classList.remove('hide')
 
   resultsContainerEl.classList.add('hide')
+
 
 
   // randomizing the order of the questions array
@@ -128,7 +130,7 @@ function showQuestions(e) {
       nextBtn.classList.remove('hide')
       
     } else {
-      resultScreen(score)
+      resultScreen()
     }
 
   
@@ -155,7 +157,7 @@ function resetDisplay() {
 
 // function to display the results screen
 // gets called if timer runs out or user answers all the questions
-function resultScreen(score) {
+function resultScreen() {
   finalScoreValue.innerHTML = score
 
   restartBtn.classList.remove('hide')
@@ -180,6 +182,7 @@ function timerDisplay() {
 function scoreDisplay() {
   scoreValue.innerHTML = `${score}`
 }
+
 
 // Set of quiz questions
 const questions = [
