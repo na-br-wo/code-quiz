@@ -11,7 +11,7 @@ const answerBtnsEl = document.getElementById('answer-btns')
 // timer variables
 const timeValue = document.getElementById('time-value')
 let countdown
-let count = 60
+let count = 30
 
 // score display variables
 const scoreValue = document.getElementById('score-value')
@@ -53,6 +53,10 @@ function showHighScores() {
 
 // function to start the quiz
 function startQuiz() {
+  // reseting count variable
+  count = 30
+  timeValue.innerHTML = `${count}s`
+
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
   scoreBtn.classList.add('hide')
@@ -164,6 +168,8 @@ function resultScreen() {
   resultsContainerEl.classList.remove('hide')
   questionContainerEl.classList.add('hide')
   nextBtn.classList.add('hide')
+
+  // add form with "enter initials" and btn which saves `score` to localStorage
 }
 
 // timer display
@@ -173,7 +179,7 @@ function timerDisplay() {
     count--
     if (count <= 0) {
       clearInterval(countdown)
-      count = 60
+      count = 30
       resultScreen()
     }
   }, 1000)
