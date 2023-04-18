@@ -42,6 +42,21 @@
     
     <!-- button to restart the quiz -->
     <button id="restart-btn" class="btn">Restart Quiz!</button>
+
+    <!-- form to enter name and save the score -->
+    <label for="name-box">Type your name and Save your high score!</label>
+
+    <div>
+      <input 
+      type="text" 
+      id="name-box" 
+      name="name" 
+      required minlength="3" 
+      maxlength="6" 
+      placeholder="(3 to 6 characters)" />
+      
+      <button id="name-save-btn" class="name-save-btn btn">Save</button>
+    </div>
   </div>
 
   <!-- div for the high score screen, hidden by default -->
