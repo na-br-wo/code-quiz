@@ -14,12 +14,16 @@ const nameSaveBtnEl = document.getElementById('name-save-btn')
 // timer variables
 const timeValue = document.getElementById('time-value')
 let countdown
-let count = 30
+let count = 60
 
 // score display variables
 const scoreValue = document.getElementById('score-value')
 let score = 0
 const finalScoreValue = document.getElementById('final-score')
+
+// variables for the high scores screen
+const nameValue = document.getElementById('saved-name-value')
+const savedScoreValue = document.getElementById('user-score-value')
 
 
 
@@ -53,7 +57,9 @@ nameSaveBtnEl.addEventListener('click', () => {
     score: finalScoreValue.textContent
   }
 
-  console.log(quizData)
+  // sending quizData to localStorage
+  localStorage.setItem("quizData", JSON.stringify(quizData))
+  showHighScores()
 })
 
 
@@ -65,14 +71,25 @@ function showHighScores() {
   // removing .hide class from the high-scores div so the HTML
   // element shows up
   highScoresEl.classList.remove('hide')
-  console.log
+
+  // display the name and high score from quizData
+  let lastScore = JSON.parse(localStorage.getItem("quizData"))
+
+  if (lastScore !==null) {
+    nameValue.textContent = lastScore.name
+    savedScoreValue.textContent = lastScore.score
+  }
+  
 }
 
 // function to start the quiz
 function startQuiz() {
   // reseting count variable
-  count = 30
+  count = 60
   timeValue.innerHTML = `${count}s`
+
+  score = 0
+  scoreDisplay.innerHTML = `${score}`
 
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
