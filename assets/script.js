@@ -72,6 +72,8 @@ function showHighScores() {
   // element shows up
   highScoresEl.classList.remove('hide')
 
+  resultsContainerEl.classList.add('hide')
+
   // display the name and high score from quizData
   let lastScore = JSON.parse(localStorage.getItem("quizData"))
 

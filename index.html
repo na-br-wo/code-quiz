@@ -9,15 +9,28 @@
   <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
+
+  <div id="correct" class="hide">
+    <h1>
+      Correct!
+    </h1>
+  </div>
+  <div id="incorrect" class="hide">
+    <h1>
+      Incorrect!
+    </h1>
+  </div>
   <!-- container class will be a "card" that will include questions,
   and answers -->
   <div class="container">
     <!-- container for quiz questions, hidden by default -->
     <div id="question-container" class="hide">
-      <div id="score">Score: <span id="score-value"></span></div>
-      <div id="timer">Timer: <span id="time-value"></span></div>
-      <!-- the actual question text, with "Question" as default value -->
-      <div id="question-text">Question</div>
+      <div class="question-info">
+        <div id="score">Score: <span id="score-value"></span></div>
+        <div id="timer">Timer: <span id="time-value"></span></div>
+        <!-- the actual question text, with "Question" as default value -->
+        <div id="question-text">Question</div>
+      </div>
       <!-- answer buttons -->
       <div id="answer-btns" class="btn-list">
         <!-- default button elements with default text for testing -->
@@ -37,28 +50,29 @@
   </div>
 
   <!-- new div for the result-screen, hidden by default -->
-  <div id="result-screen" class="hide">
-    <div class="score-display">Your Score: <span id="final-score"></span></div>
-    
-    <!-- button to restart the quiz -->
-    <button id="restart-btn" class="btn">Restart Quiz!</button>
-
-    <!-- form to enter name and save the score -->
-    <label for="name-box">Type your name and Save your high score!</label>
-
-    <div>
-      <input 
-      type="text" 
-      id="name-box"
-      name="name" 
-      required />
-      
-      <button id="name-save-btn" class="name-save-btn btn">Save</button>
+  <div id="result-screen" class="container hide">
+    <div class="result-screen-content">
+      <div class="score-display">Your Score: <span id="final-score"></span></div>
+  
+      <!-- form to enter name and save the score -->
+      <label for="name-box">Type your name and Save your high score!</label>
+  
+      <div>
+        <input 
+        type="text" 
+        id="name-box"
+        name="name" 
+        required />
+        
+        <button id="name-save-btn" class="name-save-btn btn">Save</button>
+      </div>
+      <!-- button to restart the quiz -->
+      <button id="restart-btn" class="btn">Restart Quiz!</button>
     </div>
   </div>
 
   <!-- div for the high score screen, hidden by default -->
-  <div id="high-scores" class="hide">
+  <div id="high-scores" class="container hide">
     <ul>
       <div class="saved-name">Name: <span id="saved-name-value"></span></div>
       <div class="user-score">Score: <span id="user-score-value"></span></div>

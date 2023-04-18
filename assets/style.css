@@ -13,16 +13,98 @@ body {
   margin: 0;
   margin-top: 50px;
   display: flex;
+  flex-direction: column;
   /* 100 view-width (vw) and view-height (vh) center the content easily */
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: azure;
 }
 
+/* classes for the text that displays correct or incorrect
+depending on quiz answers */
+#correct {
+  color: rgb(8, 236, 8);
+}
+
+#incorrect {
+  color: red;
+}
 /* hide class, content which we do not want displayed
 initially on the webpage, until the user clicks the Start Quiz
 or High Scores button */
 .hide {
   display: none;
+}
+
+/* styling all btns in the page */
+.btn {
+  background-color: rgb(48, 184, 177);
+  border: 3px solid rgba(48, 184, 177);
+  border-radius: 3px;
+  color: white;
+  padding: 5px 10px;
+  outline: none;
+  transition: 0.15s;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+
+/* styling for the container class which contains the score, timer,
+buttons, questions and answers */
+.container {
+  width: 600px;
+  max-width: 80%;
+  background-color: rgba(218, 112, 214, 0.359);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.control-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.question-info {
+  padding: 10px 5px;
+  border: 2px solid gray;
+  justify-content: center;
+  align-items: center;
+}
+
+#question-text {
+  margin-top: 6px;
+  font-size: small;
+  font-weight: bold;
+}
+
+.result-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.score-display, label{
+  margin-bottom: 15px;
+}
+
+input {
+  height: 30px;
 }
