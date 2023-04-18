@@ -7,7 +7,7 @@ Uses only basic CSS, Javascript, and HTML.
 
 Click "Start Quiz!" button to begin the quiz.
 
-![quiz-example-gif](images/quiz-example.gif)
+![quiz-example-gif](./assets/images/quiz_example.gif)
 
 If you answer a question correctly, the page will display "Correct!"
 
@@ -18,4 +18,4 @@ If you answer a question incorrectly, the page will display "Incorrect!" and ded
 
 Afterwards, you can save your name along with your score.
 
-![score-example-gif](images/score-example.gif)
+![score-example-gif](./assets/images/score-example.gif)
