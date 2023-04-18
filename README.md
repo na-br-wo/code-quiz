@@ -3,6 +3,8 @@
 A simple web application written with Javascript to test a
 programmer on their coding knowledge.
 
+Deployed [here](https://na-br-wo.github.io/code-quiz/)
+
 Uses only basic CSS, Javascript, and HTML.
 
 Click "Start Quiz!" button to begin the quiz.
