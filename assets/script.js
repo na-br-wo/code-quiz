@@ -7,6 +7,8 @@ const questionContainerEl = document.getElementById('question-container')
 const questionTextEl = document.getElementById('question-text')
 const answerBtnsEl = document.getElementById('answer-btns')
 const highScoresEl = document.getElementById('high-scores')
+const nameTextEl = document.getElementById('name-box')
+const nameSaveBtnEl = document.getElementById('name-save-btn')
 
 
 // timer variables
@@ -45,6 +47,16 @@ nextBtn.addEventListener('click', () => {
   nextQuestion()
 })
 
+nameSaveBtnEl.addEventListener('click', () => {
+  let quizData = {
+    name: nameTextEl.value,
+    score: finalScoreValue.textContent
+  }
+
+  console.log(quizData)
+})
+
+
 
 // function that displays the high scores
 function showHighScores() {
@@ -53,6 +65,7 @@ function showHighScores() {
   // removing .hide class from the high-scores div so the HTML
   // element shows up
   highScoresEl.classList.remove('hide')
+  console.log
 }
 
 // function to start the quiz
