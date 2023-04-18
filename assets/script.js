@@ -287,7 +287,7 @@ const questions = [
     correctAnswer: 'b: if (i == 10)'
   },
   {
-    question: 'How would you write an IF statement that will execute if "i" is NOT equal to 10?',
+    question: 'How would you write an IF statement that will execute if "i" is NOT equal to 5?',
     answers: [
       'a: if i =! 5 then',
       'b: if i <> 5',
