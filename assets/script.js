@@ -25,7 +25,9 @@ const finalScoreValue = document.getElementById('final-score')
 const nameValue = document.getElementById('saved-name-value')
 const savedScoreValue = document.getElementById('user-score-value')
 
-
+// variables for displaying correct or incorrect
+const correctDisplayEl = document.getElementById('correct')
+const incorrectDisplayEl = document.getElementById('incorrect')
 
 // results element
 const resultsContainerEl = document.getElementById('result-screen')
@@ -104,6 +106,9 @@ function startQuiz() {
 
   resultsContainerEl.classList.add('hide')
 
+  correctDisplayEl.classList.add('hide')
+  incorrectDisplayEl.classList.add('hide')
+
 
   // randomizing the order of the questions array
   // gets a random number that is either positive or negative
@@ -159,9 +164,14 @@ function showQuestions(e) {
     if (chosenBtn.innerText === correctAnswer) {
       console.log("Correct!")
       score += 10
+      correctDisplayEl.classList.remove('hide')
+      incorrectDisplayEl.classList.add('hide')
+
     } else {
       console.log("Incorrect!")
       count -= 10
+      correctDisplayEl.classList.add('hide')
+      incorrectDisplayEl.classList.remove('hide')
     }
     
     if (randomQuestions.length > currentQuestionIndex + 1) {
@@ -183,6 +193,8 @@ function showQuestions(e) {
 function resetDisplay() {
   // hiding the "next" button until answer is selected
   nextBtn.classList.add('hide')
+  correctDisplayEl.classList.add('hide')
+  incorrectDisplayEl.classList.add('hide')
 
   // while loop that removes any child within the answerBtnEl
   // since this function is called before new questions are
@@ -204,7 +216,8 @@ function resultScreen() {
   questionContainerEl.classList.add('hide')
   nextBtn.classList.add('hide')
 
-  // add form with "enter initials" and btn which saves `score` to localStorage
+  correctDisplayEl.classList.add('hide')
+  incorrectDisplayEl.classList.add('hide')
 }
 
 // timer display
