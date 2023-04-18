@@ -6,6 +6,7 @@ const restartBtn = document.getElementById('restart-btn')
 const questionContainerEl = document.getElementById('question-container')
 const questionTextEl = document.getElementById('question-text')
 const answerBtnsEl = document.getElementById('answer-btns')
+const highScoresEl = document.getElementById('high-scores')
 
 
 // timer variables
@@ -49,6 +50,9 @@ nextBtn.addEventListener('click', () => {
 function showHighScores() {
   // adding .hide class, so when this is clicked it gets hidden
   scoreBtn.classList.add('hide')
+  // removing .hide class from the high-scores div so the HTML
+  // element shows up
+  highScoresEl.classList.remove('hide')
 }
 
 // function to start the quiz
@@ -60,14 +64,13 @@ function startQuiz() {
   // adding .hide class, so when startQuiz is clicked the button gets hidden
   startBtn.classList.add('hide')
   scoreBtn.classList.add('hide')
-
+  highScoresEl.classList.add('hide')
 
   // removing .hide class, so when startQuiz is clicked the 
   // question-container is displayed
   questionContainerEl.classList.remove('hide')
 
   resultsContainerEl.classList.add('hide')
-
 
 
   // randomizing the order of the questions array
